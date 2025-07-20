@@ -1,1 +1,180 @@
-# FAPIN-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puisi Indah</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background-image: url("1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    header .author {
+      font-style: italic;
+      color: #777;
+    }
+
+    article {
+      font-size: 1.1em;
+      text-align: justify;
+      margin-bottom: 30px;
+    }
+
+    article p {
+      margin-bottom: 10px;
+      text-indent: 2em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .puisi p {
+      white-space: pre-line;
+      margin-bottom: 1.5em;
+      text-indent: 2em;
+      line-height: 1.7;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #playBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    #playBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <audio id="musik" loop>
+    <source src="Resah Jadi Luka - Daun Jatuh.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="playBtn">▶ Putar Musik</button>
+
+  <div class="container">
+    <header>
+      <h1>luka yang terlupakan</h1>
+      <p class="author">Karya: FAPIN</p>
+    </header>
+
+    <article class="puisi">
+      <p>
+        Dalam senyap malam aku berjalan,  
+        menyusuri jejak yang pernah kau tinggalkan.  
+        Ada bayang samar di ujung kenangan,  
+        tapi rasanya… sudah terlalu pudar untuk ditangiskan.
+      </p>
+      <p>
+        Dulu kau datang seperti hujan pertama,  
+        dingin—namun menenangkan jiwa.  
+        Kini kau pergi tanpa suara,  
+        menyisakan sunyi yang tak bisa kuartikan maknanya.
+      </p>
+      <p>
+        Luka ini pernah menjerit dalam diam,  
+        bersembunyi di balik tawa yang kupaksakan.  
+        Tapi waktu, seperti debu di jendela,  
+        perlahan menghapus goresan luka yang pernah membara.
+      </p>
+      <p>
+        Kini aku tak lagi mengingat rasa sakitnya,  
+        hanya samar—seperti mimpi yang gagal kuingat sepenuhnya.  
+        Mungkin bukan karena aku kuat,  
+        tapi karena aku lelah mengingat yang tak lagi layak.
+      </p>
+      <p>
+        Jadi biarlah luka itu tetap di sana,  
+        terkubur dalam ruang yang tak bernama.  
+        Tak ingin kuingat, tak ingin kuceritakan  
+        luka yang pernah ada, kini terlupakan.
+      </p>
+    </article>
+
+    <footer>
+      <p>&copy; terimakasih</p>
+    </footer>
+  </div>
+
+  <script>
+    const audio = document.getElementById("musik");
+    const btn = document.getElementById("playBtn");
+
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "⏸ Pause Musik";
+      } else {
+        audio.pause();
+        btn.textContent = "▶ Putar Musik";
+      }
+    });
+  </script>
+</body>
+</html>
